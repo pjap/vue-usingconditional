@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Introduction Using Conditional</title>
+  </head>
+  <body>
+    <div id="app">
+      <p v-if="show">You Can See Me ! <span>Hello!</span> </p>
+      <p v-else>Now You See Me!!!</p>
+      <hr>
+      <!-- For Grouping Multiple Use Template -->
+      <template v-if="show">
+        <h1>Heading Example</h1>
+        <p>Inside A Template</p>
+      </template>
+      <hr>
+      <!-- If You Want To Just Hide The Element Use V-Show -->
+      <p v-show="show">Do you alse see me ?</p>
+      <button @click="show = !show">Switch</button>
+    </div>
+  </body>
+  <script src="js/vue.js"></script>
+  <script src="js/index.js"></script>
+</html>
