@@ -6,6 +6,7 @@
   </head>
   <body>
     <div id="app">
+      <!-- IF CONDITIONAL -->
       <p v-if="show">You Can See Me ! <span>Hello!</span> </p>
       <p v-else>Now You See Me!!!</p>
       <hr>
@@ -18,6 +19,36 @@
       <!-- If You Want To Just Hide The Element Use V-Show -->
       <p v-show="show">Do you alse see me ?</p>
       <button @click="show = !show">Switch</button>
+      <hr>
+      <!-- End Of If Conditional -->
+
+      <!-- Looping -->
+      <hr>
+      <h3>Example Using Looping</h3>
+      <ul>
+        <li v-for="(ingredient, i) in ingredients" :key="ingredient">{{ ingredient }} ({{ i + 1 }})</li>
+      </ul>
+      <button @click="ingredients.push('spicy')">Add Menu</button>
+      <br>
+      <!-- For Multiple Use Template -->
+      <template v-for="(ingredient, index) in ingredients">
+        <h3>{{ ingredient }}</h3>
+        <p>{{ index }}</p>
+      </template>
+      <hr>
+      <!-- Loop Through Object -->
+      <hr>
+      <ul>
+        <li v-for="person in persons">
+          <div v-for="(value, key, i) in person">
+            {{ key }} : {{ value }} <strong>( index ke-{{ i }})</strong>
+          </div>
+        </li>
+      </ul>
+      <span v-for="n in 10">{{ n }}</span>
+      <hr>
+      <!-- End Of Loop Through Object -->
+      <!-- End Of Looping -->
     </div>
   </body>
   <script src="js/vue.js"></script>
